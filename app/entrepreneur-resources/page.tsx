@@ -1,11 +1,13 @@
 'use client';
 
+import { Suspense } from 'react';
 import ResourceCard from '@/components/resources/resource-card';
+import ResourcesLoading from '@/components/resources/loading';
 import { entrepreneurResources } from '@/data/entrepreneur-resources';
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function EntrepreneurResources() {
+function EntrepreneurResources() {
   const searchParams = useSearchParams();
   const county = searchParams.get('county');
   
@@ -76,5 +78,13 @@ export default function EntrepreneurResources() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function EntrepreneurResourcesPage() {
+  return (
+    <Suspense fallback={<ResourcesLoading />}>
+      <EntrepreneurResources />
+    </Suspense>
   );
 }
