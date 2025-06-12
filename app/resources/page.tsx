@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import { resources, categories, regions } from "@/data/resources";
 import ResourceCard from "@/components/resources/resource-card";
