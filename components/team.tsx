@@ -16,64 +16,64 @@ import TeamImg12 from "@/public/images/team-12.jpg";
 const teamMembers = [
   {
     image: TeamImg01,
-    name: "Lara Lamprecht",
-    role: "CEO and Founder",
+    name: "Governor Andy Beshear",
+    role: "Honorary Chair"
   },
   {
     image: TeamImg02,
-    name: "Timothy Chandran",
-    role: "Head of Sales",
+    name: "Dr. Terry Samuel",
+    role: "Executive Director"
   },
   {
     image: TeamImg03,
-    name: "Marie Koniuszek",
-    role: "Customer Success Lead",
+    name: "Sarah Davasher-Wisdom",
+    role: "Board Chair"
   },
   {
     image: TeamImg04,
-    name: "Alyssa Chuzeville",
-    role: "Head of Product",
+    name: "Dr. Kris Kimel",
+    role: "Founding Chair"
   },
   {
     image: TeamImg05,
-    name: "Dominik Prasad",
-    role: "Senior Researcher",
+    name: "Charles Aull",
+    role: "Policy Director"
   },
   {
     image: TeamImg06,
-    name: "Darya Semenova",
-    role: "Software Engineer",
+    name: "Dr. Mary Lynne Capilouto",
+    role: "Education Chair"
   },
   {
     image: TeamImg07,
-    name: "Mary Pullgat",
-    role: "Software Engineer",
+    name: "Ian Mooers",
+    role: "Tech Sector Representative"
   },
   {
     image: TeamImg08,
-    name: "Quentin Renvoye",
-    role: "Senior Marketing Manager",
+    name: "Judy Clabes",
+    role: "Media & Communications"
   },
   {
     image: TeamImg09,
-    name: "Justin Jackson",
-    role: "Content & SEO Lead",
+    name: "Dr. Eli Capilouto",
+    role: "Higher Education Liaison"
   },
   {
     image: TeamImg10,
-    name: "Alice Nguyen",
-    role: "Engineering Manager",
+    name: "Britanny Ramsey",
+    role: "Entrepreneur Programs"
   },
   {
     image: TeamImg11,
-    name: "Duyk Hermann",
-    role: "Product Designer",
+    name: "Dr. Eric Monday",
+    role: "Economic Development"
   },
   {
     image: TeamImg12,
-    name: "Kevon Cheung",
-    role: "Creative Director",
-  },
+    name: "Carrie Mattingly",
+    role: "Community Engagement"
+  }
 ];
 
 export default function Team() {

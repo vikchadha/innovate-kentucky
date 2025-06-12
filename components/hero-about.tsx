@@ -14,12 +14,12 @@ export default function HeroAbout() {
           {/* Section header */}
           <div className="pb-12 text-center md:pb-20">
             <h1 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
-              The story behind the project
+              Empowering Kentucky's Innovation Ecosystem
             </h1>
             <div className="mx-auto max-w-3xl">
-              <p className="text-xl text-indigo-200/65">
-                Developers are trusted to create an engaging experience for
-                their companies, so we build tools to help them.
+              <p className="text-xl text-gray-300">
+                InnovateKentucky.org connects entrepreneurs with the resources,
+                funding, and support needed to build thriving businesses across the Commonwealth
               </p>
             </div>
           </div>
@@ -36,7 +36,7 @@ export default function HeroAbout() {
                     src={TeamImg02}
                     width={320}
                     height={240}
-                    alt="Team mosaic 02"
+                    alt="Kentucky entrepreneur"
                   />
                 </div>
               </figure>

@@ -21,14 +21,6 @@ export default function Header() {
             <ul className="flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
               <li>
                 <Link
-                  href="/pricing"
-                  className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/about"
                   className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
                 >

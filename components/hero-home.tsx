@@ -1,5 +1,6 @@
 import VideoThumb from "@/public/images/hero-image-01.jpg";
 import ModalVideo from "@/components/modal-video";
+import Link from "next/link";
 
 export default function HeroHome() {
   return (
@@ -11,40 +12,32 @@ export default function HeroHome() {
           <div className="pb-12 text-center md:pb-20">
             <h1
               className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl"
-              data-aos="fade-up"
             >
-              AI-driven tools for product teams
+              Fueling Kentucky's Innovation Economy
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
-                className="mb-8 text-xl text-indigo-200/65"
-                data-aos="fade-up"
-                data-aos-delay={200}
+                className="mb-8 text-xl text-gray-300"
               >
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+                Your gateway to entrepreneurship resources, funding opportunities,
+                and startup support across the Bluegrass State
               </p>
-              <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
-                <div data-aos="fade-up" data-aos-delay={400}>
-                  <a
-                    className="btn group mb-4 w-full bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                    href="#0"
+              <div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-3">
+                <div>
+                  <Link
+                    href="/resources"
+                    className="btn-sm bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] py-[5px] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
                   >
-                    <span className="relative inline-flex items-center">
-                      Start Building
-                      <span className="ml-1 tracking-normal text-white/50 transition-transform group-hover:translate-x-0.5">
-                        -&gt;
-                      </span>
-                    </span>
-                  </a>
+                    Explore Resources
+                  </Link>
                 </div>
-                <div data-aos="fade-up" data-aos-delay={600}>
-                  <a
-                    className="btn relative w-full bg-linear-to-b from-gray-800 to-gray-800/60 bg-[length:100%_100%] bg-[bottom] text-gray-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-[length:100%_150%] sm:ml-4 sm:w-auto"
-                    href="#0"
+                <div>
+                  <Link
+                    href="/about"
+                    className="btn-sm bg-linear-to-t from-gray-800 to-gray-700 bg-[length:100%_100%] bg-[bottom] py-[5px] text-gray-200 shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.08)] hover:bg-[length:100%_150%]"
                   >
-                    Schedule Demo
-                  </a>
+                    Learn About Our Mission
+                  </Link>
                 </div>
               </div>
             </div>
@@ -54,8 +47,8 @@ export default function HeroHome() {
             thumb={VideoThumb}
             thumbWidth={1104}
             thumbHeight={576}
-            thumbAlt="Modal video thumbnail"
-            video="videos//video.mp4"
+            thumbAlt="Kentucky innovation video thumbnail"
+            video="videos/video.mp4"
             videoWidth={1920}
             videoHeight={1080}
           />

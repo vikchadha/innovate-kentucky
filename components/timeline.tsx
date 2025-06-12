@@ -6,14 +6,13 @@ export default function Timeline() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
             <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-4xl">
-              Bringing the world's ideas to life
+              Kentucky's Innovation Journey
             </h2>
             <p className="text-lg text-indigo-200/65">
-              We were frustrated because content tools hadn't innovated, so we
-              sat down and drew up what we thought a new product could look
-              like.
+              Key milestones in building Kentucky's thriving innovation ecosystem
             </p>
           </div>
+
           {/* Items */}
           <div
             className="-my-4 mx-auto max-w-3xl md:-my-6"
@@ -27,7 +26,40 @@ export default function Timeline() {
             >
               <div className="pl-2">
                 <div className="inline-flex bg-linear-to-r from-indigo-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
-                  The seed
+                  Foundation
+                </div>
+                <div className="mb-2 flex items-center">
+                  <div className="absolute left-0 inline-flex rounded-full bg-indigo-500/25 px-2.5 py-0.5 text-sm font-semibold text-indigo-500">
+                    2010
+                  </div>
+                  <div
+                    className="absolute left-0 ml-20 h-full -translate-x-1/2 translate-y-3 transform self-start bg-gray-800 px-px"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="absolute left-0 ml-20 box-content h-2 w-2 -translate-x-1/2 transform rounded-full border-4 border-gray-950 bg-indigo-500"
+                    aria-hidden="true"
+                  />
+                  <h4 className="font-nacelle text-xl font-semibold text-gray-200">
+                    Kentucky Science & Technology Corporation established
+                  </h4>
+                </div>
+                <p className="text-[1rem] text-indigo-200/65">
+                  Laid the groundwork for statewide innovation initiatives and STEM education programs
+                </p>
+              </div>
+            </div>
+
+            {/* 2nd item */}
+            <div
+              className="relative py-4 pl-24 md:py-6"
+              data-aos="fade-up"
+              data-aos-delay={200}
+              data-aos-anchor="[data-aos-id-timeline]"
+            >
+              <div className="pl-2">
+                <div className="inline-flex bg-linear-to-r from-indigo-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
+                  Growth
                 </div>
                 <div className="mb-2 flex items-center">
                   <div className="absolute left-0 inline-flex rounded-full bg-indigo-500/25 px-2.5 py-0.5 text-sm font-semibold text-indigo-500">
@@ -42,50 +74,15 @@ export default function Timeline() {
                     aria-hidden="true"
                   />
                   <h4 className="font-nacelle text-xl font-semibold text-gray-200">
-                    Open PRO was founded in Milan, Italy
+                    Launch of KY Innovation initiative
                   </h4>
                 </div>
                 <p className="text-[1rem] text-indigo-200/65">
-                  Pretium lectus quam id leo. Urna et pharetra pharetra massa
-                  massa. Adipiscing enim eu neque aliquam vestibulum morbi
-                  blandit cursus risus.
+                  Statewide program to support entrepreneurs and startups through funding, mentorship, and resources
                 </p>
               </div>
             </div>
-            {/* 2nd item */}
-            <div
-              className="relative py-4 pl-24 md:py-6"
-              data-aos="fade-up"
-              data-aos-delay={200}
-              data-aos-anchor="[data-aos-id-timeline]"
-            >
-              <div className="pl-2">
-                <div className="inline-flex bg-linear-to-r from-indigo-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
-                  New features
-                </div>
-                <div className="mb-2 flex items-center">
-                  <div className="absolute left-0 inline-flex rounded-full bg-indigo-500/25 px-2.5 py-0.5 text-sm font-semibold text-indigo-500">
-                    2019
-                  </div>
-                  <div
-                    className="absolute left-0 ml-20 h-full -translate-x-1/2 translate-y-3 transform self-start bg-gray-800 px-px"
-                    aria-hidden="true"
-                  />
-                  <div
-                    className="absolute left-0 ml-20 box-content h-2 w-2 -translate-x-1/2 transform rounded-full border-4 border-gray-950 bg-indigo-500"
-                    aria-hidden="true"
-                  />
-                  <h4 className="font-nacelle text-xl font-semibold text-gray-200">
-                    Launched the first Open PRO Advanced plan
-                  </h4>
-                </div>
-                <p className="text-[1rem] text-indigo-200/65">
-                  Pretium lectus quam id leo. Urna et pharetra pharetra massa
-                  massa. Adipiscing enim eu neque aliquam vestibulum morbi
-                  blandit cursus risus.
-                </p>
-              </div>
-            </div>
+
             {/* 3rd item */}
             <div
               className="relative py-4 pl-24 md:py-6"
@@ -95,7 +92,7 @@ export default function Timeline() {
             >
               <div className="pl-2">
                 <div className="inline-flex bg-linear-to-r from-indigo-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
-                  Pivoting
+                  Expansion
                 </div>
                 <div className="mb-2 flex items-center">
                   <div className="absolute left-0 inline-flex rounded-full bg-indigo-500/25 px-2.5 py-0.5 text-sm font-semibold text-indigo-500">
@@ -110,43 +107,11 @@ export default function Timeline() {
                     aria-hidden="true"
                   />
                   <h4 className="font-nacelle text-xl font-semibold text-gray-200">
-                    Transitioned to a SaaS business model
+                    InnovateKentucky.org launched
                   </h4>
                 </div>
                 <p className="text-[1rem] text-indigo-200/65">
-                  Pretium lectus quam id leo. Urna et pharetra pharetra massa
-                  massa. Adipiscing enim eu neque aliquam vestibulum morbi
-                  blandit cursus risus.
-                </p>
-              </div>
-            </div>
-            {/* 4th item */}
-            <div
-              className="relative py-4 pl-24 md:py-6"
-              data-aos="fade-up"
-              data-aos-delay={600}
-              data-aos-anchor="[data-aos-id-timeline]"
-            >
-              <div className="pl-2">
-                <div className="inline-flex bg-linear-to-r from-indigo-500 to-indigo-200 bg-clip-text pb-2 text-transparent">
-                  Huge milestone
-                </div>
-                <div className="mb-2 flex items-center">
-                  <div className="absolute left-0 inline-flex rounded-full bg-indigo-500/25 px-2.5 py-0.5 text-sm font-semibold text-indigo-500">
-                    2026
-                  </div>
-                  <div
-                    className="absolute left-0 ml-20 box-content h-2 w-2 -translate-x-1/2 transform rounded-full border-4 border-gray-950 bg-indigo-500"
-                    aria-hidden="true"
-                  />
-                  <h4 className="font-nacelle text-xl font-semibold text-gray-200">
-                    1 million happy customers
-                  </h4>
-                </div>
-                <p className="text-[1rem] text-indigo-200/65">
-                  Pretium lectus quam id leo. Urna et pharetra pharetra massa
-                  massa. Adipiscing enim eu neque aliquam vestibulum morbi
-                  blandit cursus risus.
+                  Centralized digital hub connecting Kentucky entrepreneurs with resources, funding, and support statewide
                 </p>
               </div>
             </div>
