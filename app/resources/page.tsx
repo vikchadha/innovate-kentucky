@@ -4,6 +4,7 @@ import { useState } from "react";
 import { resources, categories, regions } from "@/data/resources";
 import ResourceCard from "@/components/resources/resource-card";
 import Filters from "@/components/resources/filters";
+import RegionalResources from '@/components/resources/regional-resources';
 
 export default function ResourcesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -16,7 +17,14 @@ export default function ResourcesPage() {
   });
 
   return (
-    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-20">
+    <div className="max-w-6xl mx-auto py-12 px-4">
+      <h1 className="text-3xl font-bold text-center mb-12">Kentucky Regional Resources</h1>
+      
+      <section className="mb-16">
+        <h2 className="text-2xl font-semibold mb-6">Find Resources By Region</h2>
+        <RegionalResources />
+      </section>
+      
       <div className="text-center pb-12 md:pb-20">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
           Kentucky Innovation Resources

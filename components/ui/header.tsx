@@ -4,19 +4,20 @@ import Link from "next/link";
 import Logo from "./logo";
 import Dropdown from "@/components/dropdown";
 import MobileMenu from "./mobile-menu";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Header() {
   return (
     <header className="z-30 mt-2 w-full md:mt-5">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-gray-900/90 px-3 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] after:absolute after:inset-0 after:-z-10 after:backdrop-blur-xs">
+        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-background/90 px-3 shadow-sm ring-1 ring-foreground/5 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:bg-gradient-to-r before:from-foreground/5 before:to-foreground/10 before:bg-[length:200%_100%] before:bg-right before:transition-all before:duration-500 hover:before:bg-left before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] after:absolute after:inset-0 after:-z-10 after:backdrop-blur-xs">
           {/* Site branding */}
           <div className="flex flex-1 items-center">
             <Logo />
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex md:grow">
+          <nav className="hidden md:flex md:grow items-center">
             {/* Desktop menu links */}
             <ul className="flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
               <li>
@@ -42,6 +43,9 @@ export default function Header() {
                 >
                   Help Centre
                 </Link>
+              </li>
+              <li className="ml-2">
+                <ThemeToggle />
               </li>
               {/* 1st level: hover */}
               <Dropdown title="Resources">
@@ -79,7 +83,7 @@ export default function Header() {
             <li>
               <Link
                 href="/signin"
-                className="btn-sm relative bg-linear-to-b from-gray-800 to-gray-800/60 bg-[length:100%_100%] bg-[bottom] py-[5px] text-gray-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_right,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] hover:bg-[length:100%_150%]"
+                className="btn-sm relative bg-background/80 text-foreground/80 hover:bg-foreground/5 hover:text-foreground transition-colors border border-foreground/10 rounded-lg px-4 py-1.5 text-sm font-medium"
               >
                 Sign In
               </Link>
@@ -87,7 +91,7 @@ export default function Header() {
             <li>
               <Link
                 href="/signup"
-                className="btn-sm bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] py-[5px] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
+                className="btn-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-lg px-4 py-1.5 text-sm font-medium shadow-sm"
               >
                 Register
               </Link>

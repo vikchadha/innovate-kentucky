@@ -2,12 +2,11 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { KYCounties, KYRegions } from '@/data/ky-counties';
+import { KYRegions } from '@/data/ky-counties';
 import { useState } from 'react';
 
 export default function HeroHome() {
   const [selectedCounty, setSelectedCounty] = useState<string>('');
-  const [showRegion, setShowRegion] = useState<boolean>(false);
   
   const stats = [
     { value: '120+', label: 'KY Startups Funded' },
@@ -16,20 +15,21 @@ export default function HeroHome() {
   ];
 
   return (
-    <section className="relative">
+    <section className="relative bg-white dark:bg-gray-950">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-gray-900">
+      <div className="absolute inset-0 bg-gray-900">
+        <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-gray-900 dark:from-indigo-900/50 dark:to-gray-950/95" />
         <Image 
           src="/images/ky-landscape.jpg" 
           alt="Kentucky landscape"
           fill
-          className="object-cover opacity-40"
+          className="object-cover opacity-40 dark:opacity-20"
           priority
         />
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative bg-white/90 dark:bg-gray-950/95 backdrop-blur-sm">
         <div className="pt-32 pb-12 md:pt-40 md:pb-20">
           {/* Heading */}
           <div className="text-center pb-12 md:pb-16">
@@ -50,14 +50,14 @@ export default function HeroHome() {
             <div className="max-w-md mx-auto mb-8" data-aos="fade-up">
               <div className="relative">
                 <select
+                  className="w-full md:w-64 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   value={selectedCounty}
                   onChange={(e) => setSelectedCounty(e.target.value)}
-                  className="block w-full px-4 py-3 text-gray-300 bg-gray-800/50 border border-gray-600 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
-                  <option value="">Select Your County</option>
-                  {Object.entries(KYRegions).map(([region, counties]) => (
-                    <optgroup key={region} label={region}>
-                      {counties.map(county => (
+                  <option value="">Select your county</option>
+                  {KYRegions.map(region => (
+                    <optgroup key={region.name} label={region.name}>
+                      {region.counties.map(county => (
                         <option key={county} value={county}>{county}</option>
                       ))}
                     </optgroup>
@@ -84,9 +84,14 @@ export default function HeroHome() {
             {/* Stats */}
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center gap-4 mb-8">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-gray-800/50 rounded-lg p-4 text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div 
+                  key={index} 
+                  className="bg-gray-800/80 dark:bg-gray-900/80 rounded-lg p-4 text-center backdrop-blur-sm" 
+                  data-aos="fade-up" 
+                  data-aos-delay={index * 100}
+                >
                   <div className="text-2xl font-bold text-white">{stat.value}</div>
-                  <div className="text-sm text-gray-300">{stat.label}</div>
+                  <div className="text-sm text-gray-200 dark:text-gray-300">{stat.label}</div>
                 </div>
               ))}
             </div>

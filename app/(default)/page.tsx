@@ -3,28 +3,24 @@ export const metadata = {
   description: "Page description",
 };
 
-import PageIllustration from "@/components/page-illustration";
-import HeroHome from "@/components/hero-home";
-import Workflows from "@/components/workflows";
-import Features from "@/components/features";
-import KentuckyResources from "@/components/kentucky-resources";
-import SuccessStories from "@/components/success-stories";
-import Partners from "@/components/partners";
-import SplitCarousel from "@/components/split-carousel";
-import Cta from "@/components/cta";
+import HeroHome from '@/components/hero-home';
+import StatsSection from '@/components/stats-section';
+import IndustryShowcase from '@/components/industry-showcase';
+import SuccessSpotlight from '@/components/success-spotlight';
+import KentuckyEcosystem from '@/components/ky-ecosystem';
+import FundingOpportunities from '@/components/funding-opportunities';
+import RegionalInnovation from '@/components/regional-innovation';
 
 export default function Home() {
   return (
     <>
-      <PageIllustration />
       <HeroHome />
-      <Workflows />
-      <Features />
-      <KentuckyResources />
-      <SuccessStories />
-      <Partners />
-      <SplitCarousel />
-      <Cta />
+      <StatsSection />
+      <IndustryShowcase />
+      <KentuckyEcosystem />
+      <FundingOpportunities />
+      <RegionalInnovation />
+      <SuccessSpotlight />
     </>
   );
 }
