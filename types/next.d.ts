@@ -1,3 +1,6 @@
+// Basic Next.js type declarations
+// No custom extensions to prevent conflicts with Next.js internals
+
 import type { 
   GetStaticPropsContext,
   GetServerSidePropsContext,
@@ -5,10 +8,3 @@ import type {
   NextApiRequest,
   NextApiResponse
 } from 'next';
-
-declare module 'next' {
-  interface PageProps {
-    params: Record<string, string>;
-    searchParams?: Record<string, string | string[]>;
-  }
-}

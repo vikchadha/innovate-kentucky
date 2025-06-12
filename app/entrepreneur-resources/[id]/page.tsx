@@ -3,12 +3,9 @@
 import { notFound } from 'next/navigation';
 import { entrepreneurResources } from '@/data/entrepreneur-resources';
 
-type PageParams = {
-  params: { id: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
-export default function ResourceDetailPage({ params }: PageParams) {
+export default function ResourceDetailPage(props: any) {
+  // Type assertion for params
+  const params = props.params as { id: string };
   const resource = entrepreneurResources.find(r => r.id === params.id);
   
   if (!resource) {
