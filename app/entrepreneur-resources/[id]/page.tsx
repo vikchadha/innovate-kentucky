@@ -3,12 +3,12 @@
 import { notFound } from 'next/navigation';
 import { entrepreneurResources } from '@/data/entrepreneur-resources';
 
-export default function ResourceDetailPage({
-  params
-}: {
-  params: { id: string }
-} & { searchParams?: Record<string, string | string[]> }
-) {
+type PageParams = {
+  params: { id: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+};
+
+export default function ResourceDetailPage({ params }: PageParams) {
   const resource = entrepreneurResources.find(r => r.id === params.id);
   
   if (!resource) {
