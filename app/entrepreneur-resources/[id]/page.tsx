@@ -3,13 +3,12 @@
 import { notFound } from 'next/navigation';
 import { entrepreneurResources } from '@/data/entrepreneur-resources';
 
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
-
-export default function ResourceDetailPage({ params }: PageProps) {
+export default function ResourceDetailPage({
+  params
+}: {
+  params: { id: string }
+} & { searchParams?: Record<string, string | string[]> }
+) {
   const resource = entrepreneurResources.find(r => r.id === params.id);
   
   if (!resource) {
