@@ -1,7 +1,15 @@
+'use client';
+
 import { notFound } from 'next/navigation';
 import { entrepreneurResources } from '@/data/entrepreneur-resources';
 
-export default function ResourceDetailPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
+
+export default function ResourceDetailPage({ params }: PageProps) {
   const resource = entrepreneurResources.find(r => r.id === params.id);
   
   if (!resource) {
