@@ -1,57 +1,130 @@
-import VideoThumb from "@/public/images/hero-image-01.jpg";
-import ModalVideo from "@/components/modal-video";
-import Link from "next/link";
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+import { KYCounties, KYRegions } from '@/data/ky-counties';
+import { useState } from 'react';
 
 export default function HeroHome() {
+  const [selectedCounty, setSelectedCounty] = useState<string>('');
+  const [showRegion, setShowRegion] = useState<boolean>(false);
+  
+  const stats = [
+    { value: '120+', label: 'KY Startups Funded' },
+    { value: '$2.1M+', label: 'Funding Available' },
+    { value: 'All 120', label: 'Counties Served' }
+  ];
+
   return (
-    <section>
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* Hero content */}
-        <div className="py-12 md:py-20">
-          {/* Section header */}
-          <div className="pb-12 text-center md:pb-20">
-            <h1
-              className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,var(--color-gray-200),var(--color-indigo-200),var(--color-gray-50),var(--color-indigo-300),var(--color-gray-200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl"
-            >
-              Fueling Kentucky's Innovation Economy
+    <section className="relative">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-gray-900">
+        <Image 
+          src="/images/ky-landscape.jpg" 
+          alt="Kentucky landscape"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+      </div>
+
+      {/* Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+          {/* Heading */}
+          <div className="text-center pb-12 md:pb-16">
+            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-indigo-200">
+                Building Kentucky's
+              </span>
+              <br />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                Innovation Future
+              </span>
             </h1>
-            <div className="mx-auto max-w-3xl">
-              <p
-                className="mb-8 text-xl text-gray-300"
-              >
-                Your gateway to entrepreneurship resources, funding opportunities,
-                and startup support across the Bluegrass State
-              </p>
-              <div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-3">
-                <div>
-                  <Link
-                    href="/resources"
-                    className="btn-sm bg-linear-to-t from-indigo-600 to-indigo-500 bg-[length:100%_100%] bg-[bottom] py-[5px] text-white shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.16)] hover:bg-[length:100%_150%]"
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8" data-aos="zoom-y-out">
+              Access funding, mentorship, and resources tailored for Bluegrass State entrepreneurs
+            </p>
+
+            {/* County Selector */}
+            <div className="max-w-md mx-auto mb-8" data-aos="fade-up">
+              <div className="relative">
+                <select
+                  value={selectedCounty}
+                  onChange={(e) => setSelectedCounty(e.target.value)}
+                  className="block w-full px-4 py-3 text-gray-300 bg-gray-800/50 border border-gray-600 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <option value="">Select Your County</option>
+                  {Object.entries(KYRegions).map(([region, counties]) => (
+                    <optgroup key={region} label={region}>
+                      {counties.map(county => (
+                        <option key={county} value={county}>{county}</option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              {selectedCounty && (
+                <div className="mt-4">
+                  <Link 
+                    href={`/entrepreneur-resources?county=${encodeURIComponent(selectedCounty)}`}
+                    className="text-indigo-400 hover:text-indigo-300 font-medium"
                   >
-                    Explore Resources
+                    View resources in {selectedCounty} County →
                   </Link>
                 </div>
-                <div>
-                  <Link
-                    href="/about"
-                    className="btn-sm bg-linear-to-t from-gray-800 to-gray-700 bg-[length:100%_100%] bg-[bottom] py-[5px] text-gray-200 shadow-[inset_0px_1px_0px_0px_--theme(--color-white/.08)] hover:bg-[length:100%_150%]"
-                  >
-                    Learn About Our Mission
-                  </Link>
+              )}
+            </div>
+
+            {/* Stats */}
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center gap-4 mb-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="bg-gray-800/50 rounded-lg p-4 text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                  <div className="text-2xl font-bold text-white">{stat.value}</div>
+                  <div className="text-sm text-gray-300">{stat.label}</div>
                 </div>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center gap-4">
+              <div data-aos="zoom-y-out" data-aos-delay="300">
+                <Link href="/entrepreneur-resources" className="btn text-white bg-indigo-600 hover:bg-indigo-700 w-full sm:w-auto">
+                  Find Your Resources
+                </Link>
+              </div>
+              <div data-aos="zoom-y-out" data-aos-delay="400">
+                <Link href="/success-stories" className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto">
+                  Watch Success Stories
+                </Link>
               </div>
             </div>
           </div>
 
-          <ModalVideo
-            thumb={VideoThumb}
-            thumbWidth={1104}
-            thumbHeight={576}
-            thumbAlt="Kentucky innovation video thumbnail"
-            video="videos/video.mp4"
-            videoWidth={1920}
-            videoHeight={1080}
-          />
+          {/* Featured Opportunity Alert */}
+          <div className="max-w-sm mx-auto bg-indigo-900/50 backdrop-blur-sm rounded-xl p-4 border border-indigo-400" data-aos="fade-up">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 pt-0.5">
+                <svg className="h-6 w-6 text-indigo-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <h3 className="text-sm font-medium text-white">Deadline Approaching</h3>
+                <p className="text-sm text-indigo-200 mt-1">
+                  KY Innovation Grant - Apply by June 30
+                </p>
+                <Link href="/entrepreneur-resources/ky-innovation-grant" className="text-sm font-medium text-indigo-300 hover:text-indigo-200 mt-2 inline-flex items-center">
+                  View details <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
