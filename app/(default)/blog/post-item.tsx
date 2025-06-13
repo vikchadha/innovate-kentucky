@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useCategoryProvider } from "./category-provider";
 
-export default function PostItem({ ...props }) {
+export default function PostItem({ ...props }: { [key: string]: any }) {
   const { category } = useCategoryProvider();
-  const isHidden = category !== "All" && category !== props.metadata.category;
+  const isHidden = category !== "All" && category !== props['metadata'].category;
 
   return (
     <article
@@ -15,15 +15,15 @@ export default function PostItem({ ...props }) {
       <header>
         <Link
           className="group relative mb-6 block overflow-hidden rounded-2xl border border-gray-800/80 before:absolute before:inset-0 before:-z-10 before:bg-linear-to-br before:from-gray-900 before:via-indigo-500/50 before:to-indigo-500 before:opacity-50"
-          href={`/blog/${props.slug}`}
+          href={`/blog/${props['slug']}`}
           tabIndex={-1}
         >
           <Image
             className="aspect-101/64 w-full object-cover opacity-70 grayscale transition ease-out group-hover:scale-[1.02] group-hover:opacity-100 group-hover:grayscale-[20%]"
-            src={props.metadata.image}
+            src={props['metadata'].image}
             width={347}
             height={220}
-            alt={props.metadata.title}
+            alt={props['metadata'].title}
           />
         </Link>
         <div className="mb-3">
@@ -34,7 +34,7 @@ export default function PostItem({ ...props }) {
                 href="#0"
               >
                 <span className="bg-linear-to-r from-indigo-500 to-indigo-200 bg-clip-text text-transparent">
-                  {props.metadata.category}
+                  {props['metadata'].category}
                 </span>
               </a>
             </li>
@@ -43,28 +43,28 @@ export default function PostItem({ ...props }) {
         <h3 className="mb-2 font-nacelle text-lg font-semibold">
           <Link
             className="text-gray-200 transition hover:text-white"
-            href={`/blog/${props.slug}`}
+            href={`/blog/${props['slug']}`}
           >
-            {props.metadata.title}
+            {props['metadata'].title}
           </Link>
         </h3>
       </header>
       <footer className="flex items-center gap-3">
         <Image
           className="inline-flex shrink-0 rounded-full"
-          src={props.metadata.authorImg}
+          src={props['metadata']['authorImg']}
           width={28}
           height={28}
-          alt={props.metadata.author}
+          alt={props['metadata']['author']}
         />
         <div className="text-sm font-medium text-gray-200">
-          <span>{props.metadata.author}</span>
+          <span>{props['metadata']['author']}</span>
           <span className="text-gray-700"> - </span>
           <a
             className="text-indigo-200/65 transition-colors hover:text-indigo-500"
-            href={props.metadata.authorLink}
+            href={props['metadata'].authorLink}
           >
-            {props.metadata.authorRole}
+            {props['metadata'].authorRole}
           </a>
         </div>
       </footer>
