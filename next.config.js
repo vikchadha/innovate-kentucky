@@ -1,13 +1,8 @@
 const withMDX = require("@next/mdx")({
   extension: /\\.mdx?$/,
   options: {
-    // If you use remark-gfm, you'll need to use next.config.mjs
-    // as the package is ESM only
-    // https://github.com/remarkjs/remark-gfm#install
     remarkPlugins: [],
     rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
   },
 });
 
@@ -16,24 +11,41 @@ const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
+  
   // Configure images if needed
   images: {
-    domains: ['images.unsplash.com'], // Add your image domains here
+    domains: ['images.unsplash.com'],
   },
+  
   // Webpack configuration
-  webpack: (config) => {
-    // Add SVGR Loader
+  webpack: (config, { isServer }) => {
+    // Handle SVG files with file-loader
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
+      use: [{
+        loader: '@svgr/webpack',
+        options: {
+          svgo: false, // Disable SVGO as it's causing issues
+          titleProp: true,
+          ref: true,
+        }
+      }],
     });
     
-    // Add support for loading SVG files
+    // Handle SVG files in CSS/SCSS files
     config.module.rules.push({
       test: /\.svg$/,
-      use: ['@svgr/webpack'],
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name].[hash:8][ext]',
+        publicPath: '/_next/static/media/',
+      },
+      exclude: /node_modules/,
     });
+    
+    // Important: return the modified config
+    return config;
 
     return config;
   },
