@@ -8,9 +8,9 @@ export default function FundingOpportunities() {
   ];
 
   return (
-    <section className="py-16 bg-blue-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 dark:text-white">Funding Opportunities</h2>
+    <section className="py-16 bg-blue-50 dark:bg-gray-900 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Funding Opportunities</h2>
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-100 dark:bg-gray-700">

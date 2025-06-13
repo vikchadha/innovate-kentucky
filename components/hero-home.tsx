@@ -15,22 +15,22 @@ export default function HeroHome() {
   ];
 
   return (
-    <section className="relative bg-white dark:bg-gray-950">
+    <section className="relative bg-gray-900 dark:bg-gray-950 w-full">
       {/* Background */}
-      <div className="absolute inset-0 bg-gray-900">
+      <div className="absolute inset-0 w-full">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-900/20 to-gray-900 dark:from-indigo-900/50 dark:to-gray-950/95" />
         <Image 
           src="/images/ky-landscape.jpg" 
           alt="Kentucky landscape"
           fill
-          className="object-cover opacity-40 dark:opacity-20"
+          className="object-cover opacity-40 dark:opacity-20 w-full"
           priority
         />
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative bg-white/90 dark:bg-gray-950/95 backdrop-blur-sm">
-        <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <div className="pt-32 pb-12 md:pt-40 md:pb-20 relative z-10">
           {/* Heading */}
           <div className="text-center pb-12 md:pb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">

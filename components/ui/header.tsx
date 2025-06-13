@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Logo from "./logo";
-import Dropdown from "@/components/dropdown";
 import MobileMenu from "./mobile-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -17,86 +16,29 @@ export default function Header() {
           </div>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex md:grow items-center">
-            {/* Desktop menu links */}
-            <ul className="flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
+          <nav className="flex flex-1 items-center justify-end">
+            <ul className="flex items-center gap-6 text-sm">
               <li>
                 <Link
                   href="/about"
-                  className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
+                  className="text-foreground/80 hover:text-foreground transition-colors"
                 >
-                  About Us
+                  About
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/blog"
-                  className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
+                  href="/resources"
+                  className="text-foreground/80 hover:text-foreground transition-colors"
                 >
-                  Blog
+                  Resources
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/help/frequently-asked-questions"
-                  className="flex items-center px-2 py-1 text-gray-200 transition hover:text-indigo-500 lg:px-3"
-                >
-                  Help Centre
-                </Link>
-              </li>
-              <li className="ml-2">
                 <ThemeToggle />
               </li>
-              {/* 1st level: hover */}
-              <Dropdown title="Resources">
-                {/* 2nd level: hover */}
-                <li>
-                  <Link
-                    href="/newsletter"
-                    className="flex rounded-lg px-2 py-1.5 text-sm text-white hover:text-indigo-500"
-                  >
-                    Newsletter
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="flex rounded-lg px-2 py-1.5 text-sm text-white hover:text-indigo-500"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/404"
-                    className="flex rounded-lg px-2 py-1.5 text-sm text-white hover:text-indigo-500"
-                  >
-                    404
-                  </Link>
-                </li>
-              </Dropdown>
             </ul>
           </nav>
-
-          {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
-            <li>
-              <Link
-                href="/signin"
-                className="btn-sm relative bg-background/80 text-foreground/80 hover:bg-foreground/5 hover:text-foreground transition-colors border border-foreground/10 rounded-lg px-4 py-1.5 text-sm font-medium"
-              >
-                Sign In
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/signup"
-                className="btn-sm bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-lg px-4 py-1.5 text-sm font-medium shadow-sm"
-              >
-                Register
-              </Link>
-            </li>
-          </ul>
 
           <MobileMenu />
         </div>

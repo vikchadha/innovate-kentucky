@@ -9,8 +9,8 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900/80">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900/80 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">Kentucky by the Numbers</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (

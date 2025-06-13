@@ -5,7 +5,6 @@ import { ThemeProvider } from 'next-themes';
 import Header from '@/components/ui/header';
 import Footer from '@/components/ui/footer';
 import { ThemeWrapper } from '@/components/theme-wrapper';
-import ThemeDebugClient from '@/components/theme-debug-client';
 
 // Configure Inter variable font
 const inter = Inter({
@@ -47,7 +46,6 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
-              <ThemeDebugClient />
             </div>
           </ThemeWrapper>
         </ThemeProvider>

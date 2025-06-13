@@ -37,11 +37,11 @@ export default function MobileMenu() {
   });
 
   return (
-    <div className="flex md:hidden">
+    <div className="md:hidden">
       {/* Hamburger button */}
       <button
         ref={trigger}
-        className={`group inline-flex h-8 w-8 items-center justify-center text-center text-gray-200 transition ${mobileNavOpen && "active"}`}
+        className={`group inline-flex h-8 w-8 items-center justify-center text-center text-foreground/80 transition ${mobileNavOpen && "active"}`}
         aria-controls="mobile-nav"
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
@@ -78,76 +78,31 @@ export default function MobileMenu() {
         </svg>
       </button>
 
-      {/*Mobile navigation */}
+      {/* Mobile navigation */}
       <div ref={mobileNav}>
         <Transition
           show={mobileNavOpen}
           as="nav"
           id="mobile-nav"
-          className="absolute left-0 top-full z-20 mt-2 w-full rounded-xl bg-gray-900/90 backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(to_bottom,var(--color-gray-800),var(--color-gray-700),var(--color-gray-800))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)] transform transition ease-out duration-200 data-enter:data-closed:-translate-y-2 data-closed:opacity-0"
+          className="absolute left-0 top-full z-20 mt-2 w-full rounded-xl bg-background/95 backdrop-blur-sm shadow-lg ring-1 ring-foreground/10 transform transition ease-out duration-200 data-enter:data-closed:-translate-y-2 data-closed:opacity-0"
         >
-          <ul className="p-2 text-sm">
-            <li>
-              <Link
-                href="/pricing"
-                className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Pricing
-              </Link>
-            </li>
+          <ul className="p-2 space-y-1">
             <li>
               <Link
                 href="/about"
-                className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
+                className="flex w-full rounded-lg px-4 py-3 text-foreground/90 hover:bg-foreground/5 transition-colors"
                 onClick={() => setMobileNavOpen(false)}
               >
-                About Us
+                About
               </Link>
             </li>
             <li>
               <Link
-                href="/blog"
-                className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
+                href="/resources"
+                className="flex w-full rounded-lg px-4 py-3 text-foreground/90 hover:bg-foreground/5 transition-colors"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/help/frequently-asked-questions"
-                className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Help Centre
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/newsletter"
-                className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Newsletter
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/contact"
-                className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/404"
-                className="flex rounded-lg px-2 py-1.5 text-white hover:text-indigo-500"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                404
+                Resources
               </Link>
             </li>
           </ul>

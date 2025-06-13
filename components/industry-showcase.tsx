@@ -47,19 +47,17 @@ const IndustryCard = ({ industry }: IndustryCardProps) => (
 
 export default function IndustryShowcase() {
   return (
-    <section className="py-16 bg-white dark:bg-gray-950">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="py-16 bg-white dark:bg-gray-950 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
-            Kentucky Industry Leaders
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Discover the driving forces behind Kentucky's thriving economy and innovation landscape
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Kentucky's Innovation Hubs</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Discover thriving industries and success stories from across the Bluegrass State
           </p>
         </div>
-        
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {KYIndustries.map(industry => (
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {KYIndustries.map((industry) => (
             <IndustryCard key={industry.name} industry={industry} />
           ))}
         </div>
