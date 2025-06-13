@@ -1,5 +1,3 @@
-import { KYRegions } from './ky-counties';
-
 export interface RegionData {
   name: string;
   slug: string;
