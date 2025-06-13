@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getRegionBySlug, getAllRegionSlugs, RegionData } from '@/data/regions';
+import { getRegionBySlug, getAllRegionSlugs } from '@/data/regions';
 import { Metadata } from 'next';
-import YouTubeEmbed from '@/components/youtube-embed';
+import { YouTubeEmbed } from '@/components/youtube-embed';
 
 export async function generateStaticParams() {
   return getAllRegionSlugs().map(slug => ({
