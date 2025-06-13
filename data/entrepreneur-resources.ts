@@ -13,16 +13,120 @@ export interface EntrepreneurResource {
 
 export const entrepreneurResources: EntrepreneurResource[] = [
   {
-    id: 'ky-innovation-grant',
-    title: 'KY Innovation Grant',
-    description: 'State-funded grants for early-stage Kentucky startups',
+    id: 'ky-innovation',
+    title: 'KY Innovation',
+    description: 'Kentucky\'s comprehensive innovation and entrepreneurship initiative that provides funding, resources, and support to high-tech, high-growth companies. Offers commercialization grants, tax incentives, and connections to investors and mentors.',
     category: 'funding',
     region: 'statewide',
-    url: 'https://kyinnovation.com/grants',
-    deadline: 'Rolling',
-    amount: 'Up to $50,000',
+    url: 'https://kyinnovation.com',
     featured: true,
-    eligibility: ['KY-based businesses', 'Tech/innovation focus']
+    eligibility: ['KY-based businesses', 'High-growth potential', 'Innovation focus'],
+    amount: 'Up to $250,000 in matching funds'
+  },
+  {
+    id: 'awesome-inc',
+    title: 'Awesome Inc',
+    description: 'A startup accelerator and entrepreneurial support organization offering educational programs, coworking space, and investment opportunities. Home to the nationally recognized Awesome Fellowship accelerator program.',
+    category: 'incubator',
+    region: 'lexington',
+    url: 'https://www.awesomeinc.org',
+    featured: true,
+    eligibility: ['Tech startups', 'All stages']
+  },
+  {
+    id: 'louisville-forward',
+    title: 'Louisville Forward',
+    description: 'Louisville Metro Government\'s economic development initiative supporting small businesses and entrepreneurs through loans, grants, and technical assistance programs.',
+    category: 'government',
+    region: 'louisville',
+    url: 'https://louisvilleky.gov/government/louisville-forward',
+    featured: true,
+    amount: 'Up to $100,000 in loans/grants'
+  },
+  {
+    id: 'blue-north',
+    title: 'Blue North',
+    description: 'Northern Kentucky\'s entrepreneurial hub providing resources, mentorship, and programming to help startups and small businesses grow and succeed in the Greater Cincinnati region.',
+    category: 'incubator',
+    region: 'northern',
+    url: 'https://bluenorthky.com',
+    featured: true
+  },
+  {
+    id: 'kstc',
+    title: 'Kentucky Science & Technology Corporation',
+    description: 'Drives Kentucky\'s economic growth through innovation, technology commercialization, and entrepreneurship. Offers funding opportunities, SBIR/STTR support, and technology transfer assistance.',
+    category: 'government',
+    region: 'statewide',
+    url: 'https://kstc.com',
+    featured: true,
+    amount: 'Varies by program'
+  },
+  {
+    id: 'ky-small-business-credit',
+    title: 'KY Small Business Credit Initiative',
+    description: 'State program providing access to capital for small businesses through loan participation and collateral support programs.',
+    category: 'funding',
+    region: 'statewide',
+    url: 'https://thinkkentucky.com/sbci',
+    amount: 'Up to $5 million per business',
+    featured: true
+  },
+  {
+    id: 'speed-school',
+    title: 'UofL Speed School Entrepreneurship',
+    description: 'Entrepreneurship programs and resources through the University of Louisville\'s J.B. Speed School of Engineering, including the Entrepreneurship for Engineers minor and innovation competitions.',
+    category: 'education',
+    region: 'louisville',
+    url: 'https://louisville.edu/speed/entrepreneurship',
+    featured: true
+  },
+  {
+    id: 'gatton-entrepreneurship',
+    title: 'Gatton College Entrepreneurship',
+    description: 'Entrepreneurship programs and resources through the University of Kentucky\'s Gatton College of Business and Economics, including the Von Allmen Center for Entrepreneurship.',
+    category: 'education',
+    region: 'lexington',
+    url: 'https://gatton.uky.edu/centers/von-allmen-entrepreneurship',
+    featured: true
+  },
+  {
+    id: 'ky-venture-fund',
+    title: 'Kentucky Enterprise Fund',
+    description: 'State fund providing grants to assist in the development of high-tech, high-growth companies in Kentucky. Focuses on job creation and capital investment.',
+    category: 'funding',
+    region: 'statewide',
+    url: 'https://thinkkentucky.com/kyedc/ky-enterprise-fund',
+    amount: 'Up to $1.5 million per project',
+    featured: true
+  },
+  {
+    id: 'launch-blue',
+    title: 'Launch Blue',
+    description: 'University of Kentucky\'s startup accelerator program that helps entrepreneurs turn innovative ideas into successful businesses through mentorship, funding, and resources.',
+    category: 'incubator',
+    region: 'lexington',
+    url: 'https://launchblue.uky.edu',
+    featured: true,
+    amount: 'Up to $50,000 in funding'
+  },
+  {
+    id: 'ky-small-business-dev',
+    title: 'KY Small Business Development Center',
+    description: 'Statewide network providing business consulting, training, and resources to help entrepreneurs start and grow successful businesses in Kentucky.',
+    category: 'education',
+    region: 'statewide',
+    url: 'https://kysbdc.com',
+    featured: true
+  },
+  {
+    id: 'bourbon-innovation',
+    title: 'Bourbon Innovation Program',
+    description: 'Initiative supporting innovation and entrepreneurship in Kentucky\'s signature bourbon and spirits industry through research, development, and commercialization support.',
+    category: 'network',
+    region: 'statewide',
+    url: 'https://kybourbon.com/innovation',
+    featured: true
   },
   {
     id: 'launch-blue',
