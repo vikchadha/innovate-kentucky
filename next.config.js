@@ -16,17 +16,19 @@ const nextConfig = {
   // Configure `pageExtensions` to include MDX files
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   reactStrictMode: true,
-  swcMinify: true,
-  // Ensure CSS and fonts are loaded properly
-  experimental: {
-    appDir: true,
-  },
   // Configure images if needed
   images: {
     domains: ['images.unsplash.com'], // Add your image domains here
   },
   // Webpack configuration
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
+    // Add SVGR Loader
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    });
+    
     // Add support for loading SVG files
     config.module.rules.push({
       test: /\.svg$/,
